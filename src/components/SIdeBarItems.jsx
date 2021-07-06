@@ -1,15 +1,17 @@
 import React from "react"
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import SystemIcon from "@material-ui/icons/Apps";
-import RentalIcon from "@material-ui/icons/Timer";
-import ApprovalIcon from "@material-ui/icons/GroupAdd";
-import PeopleIcon from "@material-ui/icons/People";
-import AssetIcon from "@material-ui/icons/DirectionsBike";
-import AlarmIcon from "@material-ui/icons/Alarm";
-import GuideIcon from "@material-ui/icons/Dns";
-import ArchiveIcon from "@material-ui/icons/Archive";
-import PayoutIcon from "@material-ui/icons/AttachMoney";
-import HelpIcon from "@material-ui/icons/Help";
+import {
+    Dashboard as DashboardIcon,
+    Apps as SystemIcon,
+    Timer as RentalIcon,
+    GroupAdd as ApprovalIcon,
+    People as PeopleIcon,
+    DirectionsBike as AssetIcon,
+    Alarm as AlarmIcon,
+    Dns as GuideIcon,
+    Archive as ArchiveIcon,
+    AttachMoney as PayoutIcon,
+    Help as HelpIcon
+} from "@material-ui/icons/"
 
 export default function SideBarItems() {
   const sideBarItems = [

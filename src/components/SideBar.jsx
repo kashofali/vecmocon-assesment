@@ -1,25 +1,29 @@
-import React, {useState} from "react";
-import AppBar from "@material-ui/core/AppBar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import React, { useState } from "react";
+import {
+  AppBar,
+  CssBaseline,
+  Drawer,
+  Hidden,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Button,
+  Typography,
+} from "@material-ui/core/";
+import {
+  Menu as MenuIcon,
+  Settings as SettingsIcon,
+  PowerSettingsNew as PowerIcon,
+  Help as HelpIcon,
+  ArrowForwardIos as ArrowIcon ,
+} from "@material-ui/icons/";
 import logo from "../images/logo.png";
-import SettingsIcon from "@material-ui/icons/Settings";
-import PowerIcon from "@material-ui/icons/PowerSettingsNew";
-import HelpIcon from "@material-ui/icons/Help";
-import ArrowIcon from "@material-ui/icons/ChevronRight";
 import SideBarItems from "./SIdeBarItems";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import { useAlert } from 'react-alert'
+import { useAlert } from "react-alert";
 
 const drawerWidth = 280;
 
@@ -87,11 +91,10 @@ export default function SideBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const alert = useAlert()
-  const [alertd, setAlert] = useState(true)
+  const alert = useAlert();
+  const [alertd, setAlert] = useState(true);
 
   const handleDrawerToggle = () => {
-
     setMobileOpen(!mobileOpen);
   };
 
@@ -129,16 +132,19 @@ export default function SideBar(props) {
 
       <List>
         {SideBarListItems.map((items) => (
-          <ListItem button key={items.id} onClick={() => {
-            if(alertd){
-              alert.show(items.name)
-              setAlert(false)
-            } 
-            else{
-              alert.removeAll()
-              alert.show(items.name)
-            }
-          }}>
+          <ListItem
+            button
+            key={items.id}
+            onClick={() => {
+              if (alertd) {
+                alert.show(items.name);
+                setAlert(false);
+              } else {
+                alert.removeAll();
+                alert.show(items.name);
+              }
+            }}
+          >
             <ListItemIcon className={classes.icon}>{items.icon}</ListItemIcon>
             <ListItemText primary={items.name} />
             {items.more && <ArrowIcon />}
@@ -203,7 +209,6 @@ export default function SideBar(props) {
           </Drawer>
         </Hidden>
       </nav>
-
     </div>
   );
 }
